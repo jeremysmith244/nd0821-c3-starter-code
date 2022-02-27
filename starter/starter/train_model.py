@@ -16,7 +16,7 @@ if __name__ == '__main__':
     data = pd.read_csv(data_path)
 
     # Optional enhancement, use K-fold cross validation instead of a train-test split.
-    train, test = train_test_split(data, test_size=0.20)
+    train, test = train_test_split(data, test_size=0.20, random_state=random_state)
 
     X_train, y_train, encoder, lb = process_data(
         train, categorical_features=cat_features, label=label, training=True
@@ -24,13 +24,14 @@ if __name__ == '__main__':
     X_test, y_test, _, _ = process_data(test, categorical_features=cat_features, 
                                         label=label, encoder=encoder, lb=lb, training=False)
     # Proces the test data with the process_data function.
-
+    print("Training model...")
     model = train_model(X_train, y_train)
     y_pred = inference(model, X_test)
     precision, recall, fbeta = compute_model_metrics(y_test, y_pred)
     # Train and save a model.
+    print("Precision: %s, Recall: %s, FBeta: %s\n"%(precision, recall, fbeta))
 
     joblib.dump(model, 'trained_model.joblib')
     joblib.dump(encoder, 'encoder.joblib')
-    joblib.dump(encoder, 'lb.joblib')
+    joblib.dump(lb, 'lb.joblib')
 
