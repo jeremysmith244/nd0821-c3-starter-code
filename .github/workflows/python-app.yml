@@ -19,7 +19,7 @@ jobs:
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        role-to-assume: arn:aws:s3:::mldevopspr3
+        role-to-assume: arn:aws:s3::mldevopspr3
         aws-region: us-west-2
     - name: Set up Python 3.8.8
       uses: actions/setup-python@v2
@@ -54,9 +54,9 @@ jobs:
     - name: Configure AWS credentials from Test account
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        role-to-assume: arn:aws:s3:::mldevopspr3
+        role-to-assume: arn:aws:s3::mldevopspr3
         aws-region: us-west-2
 
     - name: Copy files to the test website with the AWS CLI
       run: |
-        aws s3 sync . s3://mldevopspr3
+        dvc push
