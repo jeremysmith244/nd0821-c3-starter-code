@@ -19,7 +19,7 @@ jobs:
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        role-to-assume: arn:aws:iam::AKIA2OV7BSPEEUGTZJKQ:role/my-github-actions-role
+        role-to-assume: arn:aws:iam::718733939656:user/jeremy
         aws-region: us-west-2
     - name: Set up Python 3.8.8
       uses: actions/setup-python@v2
@@ -54,7 +54,7 @@ jobs:
     - name: Configure AWS credentials from Test account
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        role-to-assume: arn:aws:iam::AKIA2OV7BSPEEUGTZJKQ:role/my-github-actions-role
+        role-to-assume: arn:aws:iam::718733939656:user/jeremy
         aws-region: us-west-2
 
     - name: Copy files to the test website with the AWS CLI
