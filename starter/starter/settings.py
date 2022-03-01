@@ -9,7 +9,7 @@ cat_features = [
     "native-country",
 ]
 
-data_path = '../data/clean_census.csv'
+data_path = './starter/data/clean_census.csv'
 
 label = "salary"
 
