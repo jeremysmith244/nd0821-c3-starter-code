@@ -14,8 +14,8 @@ now = datetime.now()
 dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
 
 
-data = pd.read_csv(data_path)
-train, test = train_test_split(data, test_size=0.20, random_state=random_state)
+data = pd.read_csv(data_path, index_col='Unnamed: 0')
+train, test = train_test_split(data, test_size=test_size, random_state=random_state)
 model = joblib.load('trained_model.joblib')
 encoder = joblib.load('encoder.joblib') 
 lb = joblib.load('lb.joblib') 

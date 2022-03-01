@@ -13,10 +13,10 @@ from settings import *
 if __name__ == '__main__':
 
     # Add code to load in the data.
-    data = pd.read_csv(data_path)
+    data = pd.read_csv(data_path, index_col='Unnamed: 0')
 
     # Optional enhancement, use K-fold cross validation instead of a train-test split.
-    train, test = train_test_split(data, test_size=0.20, random_state=random_state)
+    train, test = train_test_split(data, test_size=test_size, random_state=random_state)
 
     X_train, y_train, encoder, lb = process_data(
         train, categorical_features=cat_features, label=label, training=True

@@ -13,9 +13,9 @@ logging.basicConfig(
 LOGGER = logging.getLogger()
 
 LOGGER.info("Importing data and creating model")
-data = pd.read_csv(data_path)
+data = pd.read_csv(data_path, index_col='Unnamed: 0')
 
-train, test = train_test_split(data, test_size=0.20)
+train, test = train_test_split(data, test_size=test_size, random_state=random_state)
 
 X_train, y_train, encoder, lb = process_data(
     train, categorical_features=cat_features, label=label, training=True

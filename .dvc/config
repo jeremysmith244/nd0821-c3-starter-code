@@ -1,0 +1,4 @@
+[core]
+    remote = driverremote
+['remote "driverremote"']
+    url = s3://mldevopspr3
