@@ -21,6 +21,7 @@ jobs:
       with:
         role-to-assume: arn:aws:iam::718733939656/jeremy
         aws-access-key-id: AKIA2OV7BSPEEUGTZJKQ
+        aws-secret-access-key: 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
         aws-region: us-west-2
     - name: Set up Python 3.8.8
       uses: actions/setup-python@v2
@@ -57,8 +58,8 @@ jobs:
       with:
         role-to-assume: arn:aws:iam::718733939656/jeremy
         aws-access-key-id: AKIA2OV7BSPEEUGTZJKQ
+        aws-secret-access-key: 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
         aws-region: us-west-2
-
     - name: Copy files to the test website with the AWS CLI
       run: |
         dvc push
