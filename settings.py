@@ -12,11 +12,7 @@ cat_features = [
     "native-country",
 ]
 
-rd = subprocess.run(["git", "rev-parse", "--show-toplevel"], capture_output=True, text=True)
-root = rd.stdout.strip()
-file_path = 'starter/data/clean_census.csv'
-data_path = os.path.join(root, file_path)
-model_path = os.path.join(root, 'starter/model')
+model_path = "/starter/model/"
 
 label = "salary"
 
