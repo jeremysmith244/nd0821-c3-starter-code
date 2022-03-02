@@ -1,10 +1,9 @@
 from pyexpat import model
-import matplotlib.pyplot as plt
 import pandas as pd
 from ml.data import *
 from ml.model import *
 from settings import *
-import joblib
+from joblib import load
 import os
 from datetime import datetime
 from sklearn.model_selection import train_test_split
@@ -16,9 +15,9 @@ dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
 
 data = pd.read_csv(data_path, index_col='Unnamed: 0')
 train, test = train_test_split(data, test_size=test_size, random_state=random_state)
-model = joblib.load('trained_model.joblib')
-encoder = joblib.load('encoder.joblib') 
-lb = joblib.load('lb.joblib') 
+model = load(os.path.join(model_path, 'trained_model.joblib'))
+encoder = load(os.path.join(model_path, 'encoder.joblib')) 
+lb = load(os.path.join(model_path, 'lb.joblib')) 
 
 def fit_slice(test, category, feature):
     test_slice = test[test[category]==feature]

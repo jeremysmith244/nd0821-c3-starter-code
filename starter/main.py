@@ -50,9 +50,9 @@ async def exercise_function(params: Data):
             'native-country':params.native_country}
 
     df = pd.DataFrame(data, index=[1])
-    model = load('./starter/trained_model.joblib')
-    encoder = load('./starter/encoder.joblib') 
-    lb = load('./starter/lb.joblib') 
+    model = load(os.path.join(model_path, 'trained_model.joblib'))
+    encoder = load(os.path.join(model_path, 'encoder.joblib')) 
+    lb = load(os.path.join(model_path, 'lb.joblib')) 
     X_test, _, _, _ = process_data(df, categorical_features=cat_features, label=None, 
                                    encoder=encoder, lb=lb, training=False)
     y_pred = inference(model, X_test)
@@ -64,9 +64,9 @@ async def exercise_function(params: Data):
 async def exercise_function():
 
     df = pd.DataFrame(example_data, index=[1])
-    model = load('./starter/trained_model.joblib')
-    encoder = load('./starter/encoder.joblib') 
-    lb = load('./starter/lb.joblib') 
+    model = load(os.path.join(model_path, 'trained_model.joblib'))
+    encoder = load(os.path.join(model_path, 'encoder.joblib')) 
+    lb = load(os.path.join(model_path, 'lb.joblib'))  
     X_test, _, _, _ = process_data(df, categorical_features=cat_features, label=None, 
                                    encoder=encoder, lb=lb, training=False)
     y_pred = inference(model, X_test)

@@ -31,7 +31,7 @@ if __name__ == '__main__':
     # Train and save a model.
     print("Precision: %s, Recall: %s, FBeta: %s\n"%(precision, recall, fbeta))
 
-    joblib.dump(model, 'trained_model.joblib')
-    joblib.dump(encoder, 'encoder.joblib')
-    joblib.dump(lb, 'lb.joblib')
+    joblib.dump(model, os.path.join(model_path, 'trained_model.joblib'))
+    joblib.dump(encoder, os.path.join(model_path, 'encoder.joblib'))
+    joblib.dump(lb, os.path.join(model_path,'lb.joblib'))
 

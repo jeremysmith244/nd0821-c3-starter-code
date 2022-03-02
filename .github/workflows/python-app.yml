@@ -19,8 +19,8 @@ jobs:
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        aws-access-key-id: AKIA2OV7BSPEEUGTZJKQ
-        aws-secret-access-key: 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
+        aws-access-key-id: AKIA2OV7BSPEH24WQR6V
+        aws-secret-access-key: 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
         aws-region: us-west-2
     - name: Set up Python 3.8.8
       uses: actions/setup-python@v2
