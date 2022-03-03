@@ -19,8 +19,9 @@ jobs:
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
+        super_secret: ${{ secrets.AWS_SW }}
         aws-access-key-id: AKIA2OV7BSPEH24WQR6V
-        aws-secret-access-key: ${{ secrets.AWS_SW }}
+        aws-secret-access-key: "$super_secret"
         aws-region: us-west-2
     - name: Set up Python 3.8.8
       uses: actions/setup-python@v2
