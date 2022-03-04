@@ -1,6 +1,3 @@
-/trained_model.joblib
-/encoder.joblib
 /__pycache__
 /ml/__pycache__
-/lb.joblib
 slice_output.txt
